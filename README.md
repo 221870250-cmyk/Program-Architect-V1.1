@@ -54,6 +54,18 @@ This software integrates logic from three pillars of modern strength training:
 
 ---
 
+## 📲 How to install as an App (APK)
+
+Since this is a Progressive Web App (PWA), you can convert it to an Android APK easily without coding:
+
+1.  **Deploy the site:** Host this code on Vercel or Netlify (Free).
+2.  **Go to PWABuilder:** Visit [pwabuilder.com](https://www.pwabuilder.com).
+3.  **Enter URL:** Paste your deployed Vercel/Netlify URL.
+4.  **Download:** Click "Build for Store" -> "Android". It will generate an APK file for you.
+5.  **Install:** Send the APK to your phone and install it.
+
+---
+
 ## 🏁 Getting Started
 
 1.  Clone the repository.
@@ -98,6 +110,16 @@ This software integrates logic from three pillars of modern strength training:
 1.  **《力量训练原理》(Scientific Principles of Strength Training):** 核心架构与疲劳管理。
 2.  **《肌肉与力量训练金字塔》(The Muscle & Strength Pyramid):** 容量、强度与频率的科学配比。
 3.  **《主宰方法 2.0》(The Juggernaut Method 2.0):** 非线性波浪周期的结构基础。
+
+## 📲 如何制作成安卓 APP (APK)
+
+本项目是一个 **PWA (渐进式网络应用)**，你可以通过以下“傻瓜式”步骤将其转化为 APK 安装包：
+
+1.  **部署网站**：将代码上传到 Vercel 或 Netlify（免费且简单），获取一个网站链接（例如 `myapp.vercel.app`）。
+2.  **使用转换工具**：打开微软官方工具 [PWABuilder.com](https://www.pwabuilder.com)。
+3.  **生成 APK**：在输入框粘贴你的网站链接，点击 Start。
+4.  **下载**：点击 "Package for Stores"，选择 Android，下载生成的 APK 文件。
+5.  **安装**：将 APK 发送到手机上安装即可。
 
 ## 👤 作者
 **Shi Enze**
