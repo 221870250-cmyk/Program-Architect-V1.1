@@ -8,10 +8,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Program Architect V1.1</title>
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <!-- Added ?v=2 to force browser to re-fetch the icon -->
-    <link rel="apple-touch-icon" href="/icon.png?v=2">
+    <!-- PWA Manifest: Changed to relative path -->
+    <link rel="manifest" href="./manifest.json" />
+    <!-- Icon: Changed to relative path, removed query param to avoid file resolution issues -->
+    <link rel="apple-touch-icon" href="./icon.png" />
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,7 +67,8 @@
       // Register PWA Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
+          // Changed to relative path
+          navigator.serviceWorker.register('./sw.js')
             .then(registration => {
               console.log('SW registered: ', registration);
             })
@@ -78,6 +79,6 @@
       }
     </script>
     <!-- Entry Point for Vite Build -->
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

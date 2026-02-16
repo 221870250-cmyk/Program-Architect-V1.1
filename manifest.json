@@ -2,7 +2,7 @@
   "name": "Program Architect",
   "short_name": "ProgArch",
   "description": "A specialized digital coaching tool for powerlifters featuring non-linear wave loading.",
-  "id": "/",
+  "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
