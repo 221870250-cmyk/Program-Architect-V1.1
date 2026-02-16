@@ -1,24 +1,34 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import * as fs from 'fs';
+import * as path from 'path';
 
 // Custom plugin to copy PWA files to dist
 const copyPwaFiles = () => {
   return {
     name: 'copy-pwa-files',
     closeBundle: async () => {
-      // Added icon.png to the list of files to copy
       const files = ['manifest.json', 'sw.js', 'icon.png'];
+      
+      // Ensure dist exists
+      if (!fs.existsSync('dist')) {
+         fs.mkdirSync('dist');
+      }
+
       for (const file of files) {
-        if (fs.existsSync(file)) {
-          // Ensure dist exists before copying (usually does, but safety first)
-          if (!fs.existsSync('dist')) {
-             fs.mkdirSync('dist');
-          }
-          fs.copyFileSync(file, `dist/${file}`);
-          console.log(`Copied ${file} to dist/`);
+        const srcPath = path.resolve(__dirname, file);
+        const destPath = path.resolve(__dirname, 'dist', file);
+
+        if (fs.existsSync(srcPath)) {
+          fs.copyFileSync(srcPath, destPath);
+          console.log(`✅ Copied ${file} to dist/`);
         } else {
-            console.warn(`Warning: ${file} not found in root. Make sure it exists for PWA to work.`);
+            // THROW ERROR if icon is missing so you know immediately
+            if (file === 'icon.png') {
+              console.error(`\n\n❌ ERROR: icon.png is MISSING in the root directory!\nPlease place 'icon.png' next to 'package.json' and 'vite.config.ts'.\n\n`);
+            } else {
+              console.warn(`⚠️ Warning: ${file} not found in root.`);
+            }
         }
       }
     }
@@ -31,7 +41,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  // This base path is critical for relative links to work in the built app
   base: './', 
   publicDir: false, 
 });
