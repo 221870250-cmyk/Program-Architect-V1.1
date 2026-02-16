@@ -2,6 +2,7 @@
   "name": "Program Architect",
   "short_name": "ProgArch",
   "description": "A specialized digital coaching tool for powerlifters featuring non-linear wave loading.",
+  "id": "/",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -11,16 +12,32 @@
   "lang": "en",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2548/2548523.png",
-      "sizes": "192x192",
+      "src": "https://cdn-icons-png.flaticon.com/128/2548/2548523.png",
+      "sizes": "128x128",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "https://cdn-icons-png.flaticon.com/512/2548/2548523.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1080&h=1920&q=80",
+      "sizes": "1080x1920",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Program View"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1080&h=1920&q=80",
+      "sizes": "1080x1920",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Analytics View"
     }
   ]
 }
