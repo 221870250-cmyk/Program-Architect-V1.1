@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
-import fs from 'fs';
+import * as fs from 'fs';
 
 // Custom plugin to copy PWA files to dist
 const copyPwaFiles = () => {
@@ -11,6 +10,10 @@ const copyPwaFiles = () => {
       const files = ['manifest.json', 'sw.js'];
       for (const file of files) {
         if (fs.existsSync(file)) {
+          // Ensure dist exists before copying (usually does, but safety first)
+          if (!fs.existsSync('dist')) {
+             fs.mkdirSync('dist');
+          }
           fs.copyFileSync(file, `dist/${file}`);
           console.log(`Copied ${file} to dist/`);
         }
@@ -25,5 +28,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  publicDir: false, // We handle assets manually or via imports
+  publicDir: false, 
 });
