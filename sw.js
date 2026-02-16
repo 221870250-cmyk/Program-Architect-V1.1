@@ -1,8 +1,8 @@
-const CACHE_NAME = 'program-architect-v3';
+const CACHE_NAME = 'program-architect-v1';
 const urlsToCache = [
   './',
-  'index.html',
-  'icon.png',
+  './index.html',
+  './icon.png',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap'
 ];

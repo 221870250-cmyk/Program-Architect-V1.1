@@ -17,8 +17,6 @@ const copyPwaFiles = () => {
           }
           fs.copyFileSync(file, `dist/${file}`);
           console.log(`Copied ${file} to dist/`);
-        } else {
-            console.warn(`Warning: ${file} not found in root, skipping copy.`);
         }
       }
     }
@@ -31,7 +29,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  // Removed publicDir: false to allow standard behavior if needed, 
-  // though our custom plugin handles the root files.
-  base: './', // CRITICAL: This ensures all built assets use relative paths
+  publicDir: false, 
 });
