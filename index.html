@@ -6,13 +6,15 @@
     <meta name="theme-color" content="#111827">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Program Architect V1.0</title>
+    <title>Program Architect V1.1</title>
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2548/2548523.png">
 
+    <!-- Tailwind CDN for simple styling without build complexity -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
@@ -46,11 +48,15 @@
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "@heroicons/react/": "https://esm.sh/@heroicons/react@^2.2.0/"
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@heroicons/react/": "https://esm.sh/@heroicons/react@^2.2.0/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "fs": "https://esm.sh/fs@^0.0.1-security"
   }
 }
 </script>
@@ -61,7 +67,7 @@
       // Register PWA Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js')
+          navigator.serviceWorker.register('/sw.js')
             .then(registration => {
               console.log('SW registered: ', registration);
             })
@@ -71,5 +77,7 @@
         });
       }
     </script>
+    <!-- Entry Point for Vite Build -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
