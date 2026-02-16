@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#111827">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Program Architect V1.0</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2548/2548523.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +30,7 @@
         border-radius: 2px;
       }
       body {
-        background-color: #111827; /* gray-900 - softer than pure black */
+        background-color: #111827; /* gray-900 */
         color: #f3f4f6;
         font-family: 'Inter', sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -49,5 +57,19 @@
 </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Register PWA Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
