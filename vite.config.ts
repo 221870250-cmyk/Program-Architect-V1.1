@@ -7,7 +7,8 @@ const copyPwaFiles = () => {
   return {
     name: 'copy-pwa-files',
     closeBundle: async () => {
-      const files = ['manifest.json', 'sw.js'];
+      // Added icon.png to the list of files to copy
+      const files = ['manifest.json', 'sw.js', 'icon.png'];
       for (const file of files) {
         if (fs.existsSync(file)) {
           // Ensure dist exists before copying (usually does, but safety first)
