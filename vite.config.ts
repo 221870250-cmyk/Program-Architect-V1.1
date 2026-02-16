@@ -17,6 +17,8 @@ const copyPwaFiles = () => {
           }
           fs.copyFileSync(file, `dist/${file}`);
           console.log(`Copied ${file} to dist/`);
+        } else {
+            console.warn(`Warning: ${file} not found in root. Make sure it exists for PWA to work.`);
         }
       }
     }
@@ -29,5 +31,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  // This base path is critical for relative links to work in the built app
+  base: './', 
   publicDir: false, 
 });
