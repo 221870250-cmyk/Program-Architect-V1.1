@@ -1,4 +1,4 @@
-const CACHE_NAME = 'program-architect-v1';
+const CACHE_NAME = 'program-architect-v2';
 const urlsToCache = [
   './',
   './index.html',
