@@ -100,7 +100,7 @@ This software integrates logic from three pillars of modern strength training:
 3.  **《主宰方法 2.0》(The Juggernaut Method 2.0):** 非线性波浪周期的结构基础。
 
 ## 👤 作者
-**Shi Enze**
+**石恩泽**
 
 ---
 *Designed for Strength. Built with Code.*
